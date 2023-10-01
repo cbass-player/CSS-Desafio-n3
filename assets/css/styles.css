@@ -1,0 +1,341 @@
+/* 0. Definiciones generales */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Definición de Layout (Grid) */
+navbar {
+    grid-area: navbar;
+    background-color:  #f3f3ef;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #0d0d0d;
+    font-size:1em;
+    height: 4em;
+    padding-bottom: 0.5em;
+    position: fixed;        /*Fijar elemento*/
+    right: 0;               /*Posición de Fijar elemento*/
+    top:0;                  /*Posición de Fijar elemento*/
+    width: 87.5%;
+    height: 10%;
+}
+
+asidebar {
+    grid-area: asidebar;
+    background-color:#A4E8E0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 0.8em;
+    font-weight:100;
+    padding: 1em 1em 0 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    position: fixed;   /*Fijar elemento*/
+    left: 0;           /*Posición de Fijar elemento*/
+    top:0;             /*Posición de Fijar elemento*/ 
+    height: 85%;       /*Alto relativo del elemento*/
+    width: 12.5%;      /*Ancho relativo del elemento*/
+}
+
+.main {
+    grid-area: main;
+    background-color:#ffffff;
+    padding-top: 5em;
+    width: 100%;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #E1C340;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #0d0d0d;
+    font-size:x-large;
+    height: 4em;
+    position: fixed;   /*Fijar elemento*/
+    left: 0;           /*Posición de Fijar elemento*/
+    bottom:0;          /*Posición de Fijar elemento*/
+    height: 15%;
+    width: 12.5%;
+}
+
+/*Definición de vista de computador*/
+.grid-layout {
+    display: grid;
+grid-template-areas:
+    "asidebar navbar"
+    "asidebar main"
+    "footer main";
+grid-template-columns: 1fr 7fr;  
+gap: 0px;
+min-height: 100vh;
+}
+
+/* 2. Navbar */
+.dd-filter{
+    width: 90%;
+    height: 40%;
+    font-size: 0.8em;
+}
+
+navbar h5 {
+    margin: 0;
+    padding-bottom: 0.5em;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+select option:hover {
+    background-color: #E1C340;
+}
+
+/* 3. Contenido de Aside */
+.cat-title {
+    font-size:medium;
+    text-align: center;
+    margin: 0px;
+    padding-bottom: 2em;
+}
+
+.cat-elem {
+    color:rgb(18, 17, 17);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.menu-ham {
+    display: none;
+}
+
+/* 4. Contenido Grilla */
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    padding: 3% 2em 7% 2em;
+    height: 80%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3%;
+    box-shadow: 5px 5px 10px #a9a8a8;
+    padding: 1em 0.5em 2em 0.5em;
+
+}
+
+.product img {
+    max-width: 100%;
+    height: 200px;
+    width: 180px;
+    padding: 0.5em 0.5em;
+}
+
+.product h2 {
+    font-size: 1rem;
+    margin: 0;
+    padding: 1em 0.5em 0.5em 0.5em;
+}
+
+.product p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 1em 0.5em;
+}
+
+.buy-button {
+    background-color: #513B41;
+    color: #fff;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    width: 30%;
+    border-radius: 8%;
+}
+
+.buy-button:hover {
+    background-color: #F6C324;
+}
+
+.pag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3ef;
+    height: 6em;
+    text-align: center;
+    position: fixed;        /*Fijar elemento*/
+    right: 0;               /*Posición de Fijar elemento*/
+    bottom:0;               /*Posición de Fijar elemento*/
+    width: 87.5%;
+    height: 10%;
+}
+
+/* 5. Footer */
+footer p {
+    font-size: 0.6em;
+    text-align: center;
+    margin:0;
+}
+
+/*6. Definición de vista mobile*/
+/*6.1 Layout*/
+@media (max-width: 576px) {
+    asidebar {
+        grid-area: asidebar;
+        background-color:#A4E8E0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        font-size: 0.8em;
+        font-weight:100;
+        padding: 1em 1em 1em 1em;
+        padding-left: 1em;
+        padding-top: 1em;
+        position: fixed;   /*Fijar elemento*/
+        left: 0;           /*Posición de Fijar elemento*/
+        top:0;             /*Posición de Fijar elemento*/ 
+        height: 10%;       /*Alto relativo del elemento*/
+        width: 100%;      /*Ancho relativo del elemento*/
+    }
+
+    navbar {
+        grid-area: navbar;
+        background-color:  #f3f3ef;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #0d0d0d;
+        font-size:1em;
+        height: 4em;
+        padding-bottom: 0.5em;
+        position: fixed;          /*Fijar elemento*/
+        left: 0;                  /*Posición de Fijar elemento*/
+        top:10%;                  /*Posición de Fijar elemento*/
+        width: 100%;
+        height: 10%;
+    }
+
+    .main {
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        background-color:#ffffff;
+        padding-top: 11em;
+        padding-bottom: 12em;
+        width: 100%;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #E1C340;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #0d0d0d;
+        font-size:x-large;
+        height: 4em;
+        position: fixed;   /*Fijar elemento*/
+        left: 0;           /*Posición de Fijar elemento*/
+        top:90%;          /*Posición de Fijar elemento*/
+        height: 10%;
+        width: 100%;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-areas:
+            "asidebar"
+            "navbar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;  
+        gap: 0px;
+        min-height: 100vh
+        }
+
+    /*6.2 Navbar*/
+    navbar h5 {
+        font-size: medium;
+    }
+
+    /*6.3 Contenido de Aside*/
+    asidebar .cat-title {
+        font-size:large;
+        text-align: center;
+        margin: 0px;
+        padding-bottom: 0;
+    }
+
+
+    asidebar .menu-ham {
+        display:block;
+        font-size: 2.5em;
+        color: #0d0d0d;
+    }
+
+    asidebar p {
+        display: none;
+    }
+
+    /*6.4 Contenido Grilla */
+    main .grid-products {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        gap: 6em;
+        padding: 3% 2em 7% 2em;
+        width: 100%;
+        }
+    
+    main .product {
+        width: 80%;
+        height: 105%;
+    
+    }
+
+    main .product h2 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 3.5em 0.5em 0.5em 0.5em;
+    }
+    
+    main .pag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f3f3ef;
+        text-align: center;
+        position: fixed;        /*Fijar elemento*/
+        left: 0;               /*Posición de Fijar elemento*/
+        top:80%;               /*Posición de Fijar elemento*/
+        width: 100%;
+        height: 10%;
+    }
+}
